@@ -15,3 +15,5 @@ Route::prefix('instructor')->group(function () {
     Route::view('group-assignment', 'instructor.group-assignment');
     Route::view('task-ledger', 'instructor.task-ledger');
 });
+
+Route::view('/StudentDashboard', 'StudentDashboard');
