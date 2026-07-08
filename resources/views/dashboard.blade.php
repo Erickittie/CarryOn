@@ -99,10 +99,20 @@
             </a>
 
             <!-- My Classes -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500 group-hover:text-gray-900">import_contacts</span>
-                <span>My Classes</span>
-            </a>
+            <div class="space-y-1">
+                <button type="button" id="my-classes-btn" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200 cursor-pointer focus:outline-none">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[20px] text-gray-500 group-hover:text-gray-900">import_contacts</span>
+                        <span>My Classes</span>
+                    </div>
+                    <span id="my-classes-chevron" class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">keyboard_arrow_right</span>
+                </button>
+                <!-- Submenu Items -->
+                <div id="my-classes-submenu" class="pl-9 space-y-1 mt-1 hidden overflow-hidden transition-all duration-300">
+                    <a href="/instructor/create-class" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Create a Class</a>
+                    <a href="/instructor/group-assignment" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Group Assignment</a>
+                </div>
+            </div>
 
             <!-- Projects -->
             <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
@@ -111,7 +121,7 @@
             </a>
 
             <!-- Task Ledger -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
+            <a href="/instructor/task-ledger" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500 group-hover:text-gray-900">format_list_bulleted</span>
                 <span>Task Ledger</span>
             </a>
@@ -559,6 +569,22 @@
 
         toggleBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
+
+        // Collapsible My Classes menu
+        const myClassesBtn = document.getElementById('my-classes-btn');
+        const myClassesSubmenu = document.getElementById('my-classes-submenu');
+        const myClassesChevron = document.getElementById('my-classes-chevron');
+
+        const isInstructorPage = window.location.pathname.startsWith('/instructor');
+        if (isInstructorPage) {
+            myClassesSubmenu.classList.remove('hidden');
+            myClassesChevron.classList.add('rotate-90');
+        }
+
+        myClassesBtn.addEventListener('click', () => {
+            myClassesSubmenu.classList.toggle('hidden');
+            myClassesChevron.classList.toggle('rotate-90');
+        });
     </script>
 </body>
 </html>
