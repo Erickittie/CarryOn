@@ -155,10 +155,13 @@
 <input class="w-full h-11 pl-[44px] pr-md border border-outline-variant rounded-lg font-body-md text-body-md focus:outline-none focus:border-primary transition-colors bg-surface-container-low" id="password" placeholder="••••••••" type="password">
 </div>
 </div>
-<div class="pt-sm">
+<div class="pt-sm space-y-sm">
 <button class="w-full h-12 bg-primary text-on-primary font-headline-lg-mobile text-body-md rounded-lg hover:opacity-90 active:scale-[0.98] transition-all" type="submit">
                             Log In
                         </button>
+<a href="/dashboard" class="w-full h-12 border border-outline text-primary font-headline-lg-mobile text-body-md rounded-lg flex items-center justify-center hover:bg-surface-container-low active:scale-[0.98] transition-all">
+                            Access Teacher Dashboard
+</a>
 </div>
 </form>
 <!-- Help Link -->
