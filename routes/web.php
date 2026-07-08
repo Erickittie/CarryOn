@@ -16,4 +16,4 @@ Route::prefix('instructor')->group(function () {
     Route::view('task-ledger', 'instructor.task-ledger');
 });
 
-Route::view('/StudentDashboard', 'StudentDashboard');
+Route::view('/StudentDashboard', 'student.StudentDashboard');
