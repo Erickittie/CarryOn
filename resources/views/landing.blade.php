@@ -131,7 +131,10 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all" href="#pricing">Institutions</a>
 </nav>
 <div class="flex items-center gap-md">
-<button class="px-md py-sm font-label-caps text-label-caps text-primary hover:bg-surface-container-low rounded-lg transition-colors">Login</button>
+<a href="/login"
+class="px-md py-sm font-label-caps text-label-caps text-primary hover:bg-surface-container-low rounded-lg transition-colors">
+Login
+</a>
 <a href="/registration"
 class="bg-primary text-on-primary px-xl py-md rounded-lg font-title-md text-title-md hover:shadow-lg transition-shadow flex items-center justify-center gap-sm">
 Get Started for Free
