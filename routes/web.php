@@ -6,3 +6,4 @@ Route::view('/', 'landing');
 
 Route::view('/registration', 'auth.registration');
 
+Route::view('/login', 'auth.login');
