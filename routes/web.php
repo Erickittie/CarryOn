@@ -8,7 +8,7 @@ Route::view('/registration', 'auth.registration');
 
 Route::view('/login', 'auth.login');
 
-Route::view('/dashboard', 'dashboard');
+Route::view('/dashboard', 'instructor.dashboard');
 
 Route::prefix('instructor')->group(function () {
     Route::view('create-class', 'instructor.create-class');
