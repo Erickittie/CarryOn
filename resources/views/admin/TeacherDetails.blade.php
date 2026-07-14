@@ -125,7 +125,7 @@
             </a>
             <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
                 <span class="material-symbols-outlined">logout</span>
-                <span class="font-label-caps text-label-caps">Logout</span>
+                <a href = "/login"><span class="font-label-caps text-label-caps">Logout</span></a>
             </a>
         </div>
     </nav>
