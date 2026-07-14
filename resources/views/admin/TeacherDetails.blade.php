@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{try{
         try {
             tailwind.config = {
                 darkMode: "class",
@@ -92,7 +92,7 @@
                 },
             }
         } catch (_e) {}
-    }catch(_e){}</script></head><body class="flex min-h-screen font-body-md text-on-background">
+    }catch(_e){}}catch(_e){}</script></head><body class="flex min-h-screen font-body-md text-on-background bg-background">
 
     <!-- SideNavBar -->
     <nav class="w-[260px] h-screen fixed left-0 top-0 flex flex-col py-lg bg-surface border-r border-outline-variant z-50">
@@ -123,7 +123,7 @@
                 <span class="material-symbols-outlined">help</span>
                 <span class="font-label-caps text-label-caps">Help</span>
             </a>
-            <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="/login">
+            <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
                 <span class="material-symbols-outlined">logout</span>
                 <span class="font-label-caps text-label-caps">Logout</span>
             </a>
@@ -138,7 +138,7 @@
             <div class="mb-lg">
                 <button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps group">
                     <span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-x-1">chevron_left</span>
-                    <a href = "/users"><span class="">Back to Users</span></a>
+                    <span class="">Back to Users</span>
                 </button>
             </div>
 
@@ -146,18 +146,15 @@
             <div class="card p-xl mb-lg shadow-sm border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-lg">
                 <div class="flex items-center gap-lg">
                     <div class="w-24 h-24 rounded-2xl overflow-hidden bg-primary-container flex items-center justify-center text-on-primary-container font-headline-lg text-headline-lg shadow-inner">
-                        JM
+                        SH
                     </div>
                     <div>
-                        <h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">Julian Martinez</h2>
+                        <h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">Sarah Henderson</h2>
                         <p class="font-body-md text-on-surface-variant flex items-center gap-sm mt-1">
-                            <span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
-                            j.martinez@university.edu
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                            s.henderson@university.edu
                         </p>
                     </div>
-                </div>
-                <div class="flex gap-md">
-                    
                 </div>
             </div>
 
@@ -173,27 +170,7 @@
                             <span class="material-symbols-outlined text-primary">badge</span> 
                             Account Details
                         </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-                            <div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl">
-                                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Joined</label>
-                                <p class="font-title-md text-primary">Sept 12, 2023</p>
-                            </div>
-                            <div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl">
-                                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">School</label>
-                                <p class="font-title-md text-primary">St. Jude University</p>
-                            </div>
-                            <div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl">
-                                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Last Login</label>
-                                <p class="font-title-md text-primary">Today, 9:15 AM</p>
-                            </div>
-                            <div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl">
-                                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Status</label>
-                                <div class="flex items-center gap-xs">
-                                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                                    <p class="font-title-md text-primary">Active</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-md"><div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl"><label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Department</label><p class="font-title-md text-primary">Computer Science &amp; IT</p></div><div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl"><label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Provisioned by</label><p class="font-title-md text-primary">System Admin</p></div><div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl"><label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Last Login</label><p class="font-title-md text-primary">Today, 8:30 AM</p></div><div class="p-md bg-surface-container-lowest border border-outline-variant/40 rounded-xl"><label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Status</label><div class="flex items-center gap-xs"><span class="w-2 h-2 rounded-full bg-green-500"></span><p class="font-title-md text-primary">Active</p></div></div></div>
                     </div>
 
                     <!-- Management Actions -->
@@ -217,8 +194,12 @@
                             </button>
                         </div>
 
-                        <!-- Destructive Actions -->
-                        <div class="pt-lg border-t border-outline-variant">
+                        <!-- Destructive & Admin Actions -->
+                        <div class="pt-lg border-t border-outline-variant space-y-md">
+                            <button class="w-full flex items-center justify-center gap-md p-md border border-primary/20 bg-primary/5 text-primary rounded-xl hover:bg-primary/10 transition-all font-label-caps text-label-caps">
+                                <span class="material-symbols-outlined text-[20px]">move_item</span>
+                                Transfer classes to another instructor
+                            </button>
                             <div class="flex flex-col md:flex-row gap-md">
                                 <button class="flex-1 flex items-center justify-center gap-md p-md border border-error/20 bg-error/5 text-error rounded-xl hover:bg-error/10 transition-all font-label-caps text-label-caps">
                                     <span class="material-symbols-outlined text-[20px]">block</span>
@@ -233,13 +214,13 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Classes Enrolled -->
+                <!-- Right Column: Classes Assigned -->
                 <div class="lg:col-span-5">
                     <div class="card p-lg h-full">
                         <div class="flex items-center justify-between mb-lg">
                             <h3 class="font-title-md text-title-md text-primary flex items-center gap-md">
                                 <span class="material-symbols-outlined">school</span> 
-                                Classes Enrolled
+                                Classes Assigned
                             </h3>
                             <span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-label-caps text-[10px]">3 ACTIVE</span>
                         </div>
@@ -252,40 +233,38 @@
                                     </div>
                                     <div>
                                         <p class="font-title-md text-primary leading-tight">CS101: Intro to Programming</p>
-                                        <p class="font-body-sm text-on-surface-variant">Prof. Henderson • Sec A</p>
+                                        <p class="font-body-sm text-on-surface-variant">Active • 42 Students</p>
                                     </div>
                                 </div>
-                                
                             </div>
                             <!-- Class Card 2 -->
                             <div class="flex items-center justify-between p-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
                                 <div class="flex items-center gap-md">
                                     <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                                        <span class="material-symbols-outlined">account_tree</span>
+                                        <span class="material-symbols-outlined">hub</span>
                                     </div>
                                     <div>
-                                        <p class="font-title-md text-primary leading-tight">CS202: Data Structures</p>
-                                        <p class="font-body-sm text-on-surface-variant">Prof. Chen • Sec B</p>
+                                        <p class="font-title-md text-primary leading-tight">CS305: Advanced Algorithms</p>
+                                        <p class="font-body-sm text-on-surface-variant">Active • 38 Students</p>
                                     </div>
                                 </div>
-                                
                             </div>
                             <!-- Class Card 3 -->
                             <div class="flex items-center justify-between p-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
                                 <div class="flex items-center gap-md">
                                     <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                                        <span class="material-symbols-outlined">calculate</span>
+                                        <span class="material-symbols-outlined">architecture</span>
                                     </div>
                                     <div>
-                                        <p class="font-title-md text-primary leading-tight">MATH301: Discrete Math</p>
-                                        <p class="font-body-sm text-on-surface-variant">Prof. Wallace • Sec C</p>
+                                        <p class="font-title-md text-primary leading-tight">SE402: Software Engineering</p>
+                                        <p class="font-body-sm text-on-surface-variant">Active • 44 Students</p>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                         
-                        <!-- Empty State or Additional Info could go here -->
+                        <!-- Stats below for consistency with overall feel -->
+                        
                         
                     </div>
                 </div>
@@ -297,4 +276,5 @@
     <script class="">
         // Micro-interactions for buttons
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => button.classList.add('scale-9</script></body></html>
+            button.addEventListener('mousedown', () => button.classList.add('scale-95'));
+            button.addEventListener('mouseup', () =></script></body></html>
