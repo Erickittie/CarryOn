@@ -90,46 +90,35 @@
       }
     }catch(_e){}</script><meta charset="utf-8"></head><body class="flex min-h-screen">
 <!-- SideNavBar Anchor -->
-<aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-bright border-r border-outline-variant flex flex-col py-lg px-md z-50">
-<div class="mb-xl px-sm">
-<h1 class="font-headline-lg text-headline-lg font-bold text-primary">CarryOn</h1>
-<p class="text-on-surface-variant font-body-sm text-body-sm">Admin Portal</p>
-</div>
-<nav class="flex-1 space-y-sm">
-<!-- Dashboard Tab -->
-<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200">
-<span class="material-symbols-outlined" data-original-icon="dashboard">dashboard</span>
-<span class="font-body-md text-body-md">Dashboard</span>
+<nav class="w-[260px] h-screen fixed left-0 top-0 flex flex-col py-lg bg-surface border-r border-outline-variant z-50">
+        <div class="px-lg mb-xl"><h1 class="font-headline-lg text-headline-lg font-bold text-primary">CarryOn</h1>
+<p class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Admin Portal</p></div>
+        <div class="flex-1 px-md space-y-1"><a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Overview</span>
 </a>
-<!-- Users Tab -->
-<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200">
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
 <span class="material-symbols-outlined">group</span>
-<span class="font-body-md text-body-md">Users</span>
+<span class="font-label-caps text-label-caps">Users</span>
 </a>
-<!-- Classes Tab (Active) -->
-<a href="#" class="relative flex items-center gap-md px-md py-sm rounded-lg text-primary font-bold bg-surface-container-high transition-all">
+<a class="flex items-center gap-md px-md py-sm font-bold text-primary border-r-2 border-primary bg-surface-container-low transition-colors duration-150" href="#">
 <span class="material-symbols-outlined">school</span>
-<span class="font-body-md text-body-md">Classes</span>
-<div class="active-nav-indicator"></div>
+<span class="font-label-caps text-label-caps">Classes</span>
 </a>
-<!-- Reports Tab -->
-<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200">
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
 <span class="material-symbols-outlined">assessment</span>
-<span class="font-body-md text-body-md">Reports</span>
+<span class="font-label-caps text-label-caps">Reports</span>
+</a></div>
+        
+        <div class="mt-auto px-md space-y-base border-t border-outline-variant pt-lg"><a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps">Help</span>
 </a>
-</nav>
-<div class="mt-auto pt-lg border-t border-outline-variant">
-<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 mb-sm">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200">
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
 <span class="material-symbols-outlined">logout</span>
-<span class="font-body-md text-body-md">Logout</span>
-</a>
-
-</div>
-</aside>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a></div>
+    </nav>
 <!-- Main Content Canvas -->
 <main class="flex-1 ml-[260px] bg-surface-bright min-h-screen">
 <div class="max-w-[1200px] mx-auto px-lg py-xl">
