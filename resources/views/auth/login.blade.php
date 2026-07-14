@@ -62,6 +62,9 @@
 <a href="/StudentDashboard" class="w-full h-12 border border-outline text-primary font-headline-lg-mobile text-body-md rounded-lg flex items-center justify-center hover:bg-surface-container-low active:scale-[0.98] transition-all">
                             Access Student Dashboard
 </a>
+<a href="/overview" class="w-full h-12 border border-outline text-primary font-headline-lg-mobile text-body-md rounded-lg flex items-center justify-center hover:bg-surface-container-low active:scale-[0.98] transition-all">
+                            Access Admin Dashboard
+</a>
 </div>
 </form>
 <!-- Help Link -->
