@@ -105,7 +105,7 @@
 <span class="material-symbols-outlined">group</span>
 <span class="font-label-caps text-label-caps">Users</span>
 </a>
-<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="/classes">
 <span class="material-symbols-outlined">school</span>
 <span class="font-label-caps text-label-caps">Classes</span>
 </a>
