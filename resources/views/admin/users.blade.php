@@ -244,7 +244,7 @@
 </td>
 <td class="px-lg py-md font-body-sm text-secondary">5 Courses</td>
 <td class="px-lg py-md text-right">
-<div class="flex justify-end gap-1 transition-opacity"><button class="p-2 text-outline hover:text-primary transition-colors" title="Edit User"><span class="material-symbols-outlined">edit</span></button></div>
+<div class="flex justify-end gap-1 transition-opacity"><button class="p-2 text-outline hover:text-primary transition-colors" title="Edit User"><a href = "/TeacherDetails"><span class="material-symbols-outlined">edit</span></a></button></div>
 </td>
 </tr>
 <!-- User Row 4 -->
