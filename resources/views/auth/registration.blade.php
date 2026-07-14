@@ -89,7 +89,7 @@
 <div class="mt-lg text-center">
 <p class="font-body-md text-body-md text-on-surface-variant">
                     Already have an account? 
-                    <a class="text-primary font-bold hover:underline transition-all" href="#">Log in</a>
+                    <a class="text-primary font-bold hover:underline transition-all"href="/login">Log in</a>
 </p>
 </div>
 </div>
