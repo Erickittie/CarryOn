@@ -101,11 +101,11 @@
             <p class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Admin Portal</p>
         </div>
         <div class="flex-1 px-md space-y-1">
-            <a class="flex items-center gap-md px-md py-sm transition-colors duration-150 text-secondary hover:bg-surface-container-low hover:text-primary" href="#">
+            <a class="flex items-center gap-md px-md py-sm transition-colors duration-150 text-secondary hover:bg-surface-container-low hover:text-primary" href="/overview">
                 <span class="material-symbols-outlined">dashboard</span>
                 <span class="font-label-caps text-label-caps">Overview</span>
             </a>
-            <a class="flex items-center gap-md px-md py-sm transition-colors duration-150 font-bold text-primary border-r-2 border-primary bg-surface-container-low" href="#">
+            <a class="flex items-center gap-md px-md py-sm transition-colors duration-150 font-bold text-primary border-r-2 border-primary bg-surface-container-low" href="/users">
                 <span class="material-symbols-outlined">group</span>
                 <span class="font-label-caps text-label-caps">Users</span>
             </a>
@@ -123,7 +123,7 @@
                 <span class="material-symbols-outlined">help</span>
                 <span class="font-label-caps text-label-caps">Help</span>
             </a>
-            <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
+            <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="/login">
                 <span class="material-symbols-outlined">logout</span>
                 <span class="font-label-caps text-label-caps">Logout</span>
             </a>
@@ -138,7 +138,7 @@
             <div class="mb-lg">
                 <button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps group">
                     <span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-x-1">chevron_left</span>
-                    <span class="">Back to Users</span>
+                    <a href = "/users"><span class="">Back to Users</span></a>
                 </button>
             </div>
 
@@ -149,10 +149,10 @@
                         SH
                     </div>
                     <div>
-                        <h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">Sarah Henderson</h2>
+                        <h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">Sarah Dubois</h2>
                         <p class="font-body-md text-on-surface-variant flex items-center gap-sm mt-1">
                             <span class="material-symbols-outlined text-[20px]">mail</span>
-                            s.henderson@university.edu
+                            s.dubois@university.edu
                         </p>
                     </div>
                 </div>
