@@ -100,7 +100,7 @@
 <h1 class="font-headline-lg text-headline-lg font-bold text-primary">CarryOn</h1>
 <p class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Admin Portal</p>
 </div>
-<nav class="flex-1 px-md space-y-base overflow-y-auto custom-scrollbar"><a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="#">
+<nav class="flex-1 px-md space-y-base overflow-y-auto custom-scrollbar"><a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="/overview">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-label-caps text-label-caps">Overview</span>
 </a>
