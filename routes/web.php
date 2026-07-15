@@ -22,3 +22,4 @@ Route::view('/users', 'admin.users');
 Route::view('/TeacherDetails', 'admin.TeacherDetails');
 Route::view('/StudentDetails', 'admin.StudentDetails');
 Route::view('/classes', 'admin.classes');
+Route::view('/ClassDetails', 'admin.ClassDetails');
