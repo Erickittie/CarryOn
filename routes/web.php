@@ -24,3 +24,4 @@ Route::view('/TeacherDetails', 'admin.TeacherDetails');
 Route::view('/StudentDetails', 'admin.StudentDetails');
 Route::view('/classes', 'admin.classes');
 Route::view('/ClassDetails', 'admin.ClassDetails');
+Route::view('/reports', 'admin.reports');
