@@ -120,7 +120,7 @@
         <span class="material-symbols-outlined">help</span>
         <span class="font-label-caps text-label-caps">Help</span>
     </a>
-    <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="#">
+    <a class="flex items-center gap-md px-md py-sm text-secondary hover:text-primary transition-colors" href="/login">
         <span class="material-symbols-outlined">logout</span>
         <span class="font-label-caps text-label-caps">Logout</span>
     </a>
@@ -130,10 +130,10 @@
 <!-- Breadcrumb / Header Actions -->
 <div class="flex justify-between items-start mb-lg">
 <div>
-<button class="flex items-center text-secondary font-label-caps text-label-caps gap-xs mb-md hover:text-primary transition-colors group">
+<a href = "/classes"><button class="flex items-center text-secondary font-label-caps text-label-caps gap-xs mb-md hover:text-primary transition-colors group">
 <span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
                         Back to Classes
-                    </button>
+                    </button></a>
 <h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Advanced Algorithms 401</h2>
 <p class="font-body-md text-body-md text-secondary">Instructor: Dr. Aris Thorne</p>
 </div>
