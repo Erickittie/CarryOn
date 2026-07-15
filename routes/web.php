@@ -14,6 +14,7 @@ Route::prefix('instructor')->group(function () {
     Route::view('create-class', 'instructor.create-class');
     Route::view('group-assignment', 'instructor.group-assignment');
     Route::view('task-ledger', 'instructor.task-ledger');
+    Route::view('course-detail', 'instructor.course-detail');
 });
 
 Route::view('/StudentDashboard', 'student.StudentDashboard');

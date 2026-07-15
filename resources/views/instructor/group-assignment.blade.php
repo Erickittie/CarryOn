@@ -72,60 +72,19 @@
                 <div id="my-classes-submenu" class="pl-9 space-y-1 mt-1 hidden overflow-hidden transition-all duration-300">
                     <a href="/instructor/create-class" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Create a Class</a>
                     <a href="/instructor/group-assignment" class="block py-1.5 text-[13px] font-semibold text-black hover:text-black">Group Assignment</a>
+                    <a href="/instructor/course-detail" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Course Details</a>
                 </div>
             </div>
-
-            <!-- Projects -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">article</span>
-                <span>Projects</span>
-            </a>
 
             <!-- Task Ledger -->
             <a href="/instructor/task-ledger" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500">format_list_bulleted</span>
                 <span>Task Ledger</span>
             </a>
-
-            <!-- Contribution Monitor -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">trending_up</span>
-                <span>Contribution Monitor</span>
-            </a>
-
-            <!-- Task Approvals -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">verified</span>
-                <span>Task Approvals</span>
-            </a>
-
-            <!-- Repository -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">folder_open</span>
-                <span>Repository</span>
-            </a>
-
-            <!-- Calendar -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">calendar_today</span>
-                <span>Calendar</span>
-            </a>
-
-            <!-- Reports -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">bar_chart</span>
-                <span>Reports</span>
-            </a>
         </nav>
 
         <!-- Sidebar Footer -->
         <div class="p-4 border-t border-gray-150 space-y-1">
-            <!-- Settings -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
-                <span class="material-symbols-outlined text-[20px] text-gray-500">settings</span>
-                <span>Settings</span>
-            </a>
-
             <!-- Sign Out -->
             <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500">logout</span>
@@ -157,7 +116,7 @@
                 </button>
 
                 <!-- Calendar shortcut icon -->
-                <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition">
+                <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition" onclick="toggleCalendarModal()">
                     <span class="material-symbols-outlined text-[24px]">calendar_today</span>
                 </button>
 
@@ -417,6 +376,153 @@
 
         // Initialize counters
         updateCounters();
+
+        // Calendar modal toggling
+        function toggleCalendarModal() {
+            const modal = document.getElementById('calendar-modal');
+            const card = document.getElementById('calendar-modal-card');
+            
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    card.classList.remove('scale-95', 'opacity-0');
+                    card.classList.add('scale-100', 'opacity-100');
+                }, 50);
+            } else {
+                card.classList.remove('scale-100', 'opacity-100');
+                card.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                }, 200);
+            }
+        }
     </script>
+
+    <!-- ========== CALENDAR MODAL OVERLAY ========== -->
+    <div id="calendar-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden border border-gray-100 flex flex-col transform transition-all scale-95 opacity-0 duration-300" id="calendar-modal-card">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-5 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-white/90">calendar_month</span>
+                    <span class="font-bold text-sm tracking-wide">Approved Academic Calendar</span>
+                </div>
+                <button onclick="toggleCalendarModal()" class="text-white/80 hover:text-white rounded-full p-1 hover:bg-white/10 transition">
+                    <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-5 space-y-4">
+                <!-- Month Display Selector -->
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <span class="font-bold text-sm text-gray-900">July 2026</span>
+                    <div class="flex gap-1">
+                        <button class="p-1 hover:bg-gray-100 rounded text-gray-500 hover:text-gray-900 transition"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+                        <button class="p-1 hover:bg-gray-100 rounded text-gray-500 hover:text-gray-900 transition"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+                    </div>
+                </div>
+                
+                <!-- Calendar Month Grid -->
+                <div class="grid grid-cols-7 text-center gap-1.5 text-xs text-gray-700">
+                    <span class="font-bold text-gray-400">Su</span>
+                    <span class="font-bold text-gray-400">Mo</span>
+                    <span class="font-bold text-gray-400">Tu</span>
+                    <span class="font-bold text-gray-400">We</span>
+                    <span class="font-bold text-gray-400">Th</span>
+                    <span class="font-bold text-gray-400">Fr</span>
+                    <span class="font-bold text-gray-400">Sa</span>
+                    
+                    <span class="py-1"></span>
+                    <span class="py-1"></span>
+                    <span class="py-1"></span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">1</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">2</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">3</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">4</span>
+                    
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">5</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">6</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">7</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">8</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">9</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">10</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">11</span>
+                    
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">12</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">13</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">14</span>
+                    <span class="py-1 bg-teal-500 text-white rounded-lg cursor-pointer font-bold relative" title="Groupings Lock (Today)">
+                        15
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></span>
+                    </span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">16</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">17</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">18</span>
+                    
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">19</span>
+                    <span class="py-1 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-250 rounded-lg cursor-pointer font-bold relative" title="Approved peer review slot" onclick="alert('Approved peer consult slot for Group Alpha (July 20 @ 10:00 AM)')">
+                        20
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-purple-600 rounded-full"></span>
+                    </span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">21</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">22</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">23</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">24</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">25</span>
+                    
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">26</span>
+                    <span class="py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-250 rounded-lg cursor-pointer font-bold relative" title="Milestone 1 Deliverables Deadline" onclick="alert('Capstone Milestone 1 - Project Scope Document is due July 27 @ 11:59 PM')">
+                        27
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-amber-600 rounded-full"></span>
+                    </span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">28</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">29</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">30</span>
+                    <span class="py-1 hover:bg-gray-50 rounded-lg cursor-pointer">31</span>
+                </div>
+                
+                <!-- Approved Events list -->
+                <div class="space-y-2 border-t border-gray-100 pt-3">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Approved Events (July)</span>
+                    
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-teal-50 border border-teal-100 text-xs transition hover:shadow-xs">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-teal-600 text-[18px]">lock</span>
+                            <div>
+                                <span class="font-bold text-teal-800 block">Class Groupings Locked</span>
+                                <span class="text-teal-600 block mt-0.5">Section A Group allocation finalized</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-0.5 bg-teal-100 text-teal-800 rounded font-bold text-[9px] uppercase tracking-wider">Today</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-purple-50 border border-purple-100 text-xs transition hover:shadow-xs">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-purple-600 text-[18px]">meeting_room</span>
+                            <div>
+                                <span class="font-bold text-purple-800 block">Group Alpha Consultation</span>
+                                <span class="text-purple-600 block mt-0.5">July 20 (10:00 AM) &bull; Milestone 1 review</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-0.5 bg-purple-100 text-purple-800 rounded font-bold text-[9px] uppercase tracking-wider">Approved</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-amber-50 border border-amber-100 text-xs transition hover:shadow-xs">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-amber-600 text-[18px]">priority_high</span>
+                            <div>
+                                <span class="font-bold text-amber-800 block">Milestone 1 Deliverables</span>
+                                <span class="text-amber-600 block mt-0.5">July 27 (11:59 PM) &bull; Project Scope Document</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-bold text-[9px] uppercase tracking-wider">Deadline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
