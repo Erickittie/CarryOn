@@ -154,7 +154,7 @@
 
 <td class="px-lg py-md text-right">
 <button class="p-sm rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all">
-<span class="material-symbols-outlined">visibility</span>
+<a href = "/ClassDetails"><span class="material-symbols-outlined">visibility</span></a>
 </button>
 </td>
 </tr>
