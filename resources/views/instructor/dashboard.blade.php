@@ -58,22 +58,7 @@
                 <span>Dashboard</span>
             </a>
 
-            <!-- My Classes (Dropdown) -->
-            <div class="space-y-1">
-                <button type="button" id="my-classes-btn" class="w-full relative flex items-center justify-between px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium text-[14px] transition-all duration-200 cursor-pointer focus:outline-none">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-[20px] text-gray-500">import_contacts</span>
-                        <span>My Classes</span>
-                    </div>
-                    <span id="my-classes-chevron" class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">keyboard_arrow_right</span>
-                </button>
-                <!-- Submenu Items -->
-                <div id="my-classes-submenu" class="pl-9 space-y-1 mt-1 hidden overflow-hidden transition-all duration-300">
-                    <a href="/instructor/create-class" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Create a Class</a>
-                    <a href="/instructor/group-assignment" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Group Assignment</a>
-                    <a href="/instructor/course-detail" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Course Details</a>
-                </div>
-            </div>
+
 
             <!-- Task Ledger -->
             <a href="/instructor/task-ledger" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
@@ -84,10 +69,10 @@
 
         <!-- Sidebar Footer -->
         <div class="p-4 border-t border-gray-150 space-y-1">
-            <!-- Sign Out -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
+            <!-- Log Out -->
+            <a href="/login" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500">logout</span>
-                <span>Sign Out</span>
+                <span>Log Out</span>
             </a>
         </div>
     </aside>
@@ -269,6 +254,186 @@
                         </div>
                     </div>
 
+                    <!-- Capstone Milestone 1 - Proposal & Team Setup -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#0B8793] to-[#14B8A6] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Proposal">
+                                    <span class="material-symbols-outlined text-[18px]">description</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Team">
+                                    <span class="material-symbols-outlined text-[18px]">group</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=capstone-milestone-1" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Capstone Milestone 1 - Proposal & Team Setup</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Capstone Projects</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Capstone Milestone 2 - System Architecture -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#0D7377] to-[#38A89D] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Architecture">
+                                    <span class="material-symbols-outlined text-[18px]">architecture</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Design">
+                                    <span class="material-symbols-outlined text-[18px]">design_services</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=capstone-milestone-2" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Capstone Milestone 2 - System Architecture</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Capstone Projects</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Capstone Final Defense & Presentation -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#1A365D] to-[#4A90D9] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Defense">
+                                    <span class="material-symbols-outlined text-[18px]">gavel</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Presentation">
+                                    <span class="material-symbols-outlined text-[18px]">slideshow</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=capstone-final" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Capstone Final Defense & Presentation</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Capstone Projects</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 1 - Threat Modeling Exercise -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#6B21A8] to-[#A855F7] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Security">
+                                    <span class="material-symbols-outlined text-[18px]">shield</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Modeling">
+                                    <span class="material-symbols-outlined text-[18px]">schema</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=activity-1" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Activity 1 - Threat Modeling Exercise</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Classroom Activities</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 - Agile Backlog Sprint Planning -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#B45309] to-[#F59E0B] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Sprint">
+                                    <span class="material-symbols-outlined text-[18px]">sprint</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Planning">
+                                    <span class="material-symbols-outlined text-[18px]">view_kanban</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=activity-2" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Activity 2 - Agile Backlog Sprint Planning</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Classroom Activities</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 - Git Merge Conflict Resolution -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition">
+                        <div class="relative h-[120px] bg-gradient-to-br from-[#DC2626] to-[#F87171] p-4 flex items-end shrink-0">
+                            <div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Git">
+                                    <span class="material-symbols-outlined text-[18px]">merge</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-black/20 border border-white/20 flex items-center justify-center text-white" title="Resolve">
+                                    <span class="material-symbols-outlined text-[18px]">build</span>
+                                </div>
+                            </div>
+                            <button class="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/10 p-1 rounded transition">
+                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <a href="/instructor/course-detail?task=activity-3" class="font-semibold text-[#007A5E] hover:underline text-sm leading-snug line-clamp-1">Activity 3 - Git Merge Conflict Resolution</a>
+                                <span class="text-xs text-gray-500 font-medium mt-1 block">Classroom Activities</span>
+                                <span class="text-[11px] text-gray-400 mt-0.5 block">Summer 2026</span>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-t border-gray-150 flex gap-4 shrink-0 bg-gray-50/50">
+                            <button class="text-gray-500 hover:text-[#007A5E] transition">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </main>
 
@@ -364,15 +529,7 @@
         toggleBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
 
-        // Collapsible My Classes menu
-        const myClassesBtn = document.getElementById('my-classes-btn');
-        const myClassesSubmenu = document.getElementById('my-classes-submenu');
-        const myClassesChevron = document.getElementById('my-classes-chevron');
 
-        myClassesBtn.addEventListener('click', () => {
-            myClassesSubmenu.classList.toggle('hidden');
-            myClassesChevron.classList.toggle('rotate-90');
-        });
 
         // Calendar modal toggling
         function toggleCalendarModal() {

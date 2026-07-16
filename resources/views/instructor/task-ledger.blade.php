@@ -59,22 +59,7 @@
                 <span>Dashboard</span>
             </a>
 
-            <!-- My Classes (Dropdown) -->
-            <div class="space-y-1">
-                <button type="button" id="my-classes-btn" class="w-full relative flex items-center justify-between px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium text-[14px] transition-all duration-200 cursor-pointer focus:outline-none">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-[20px] text-gray-500">import_contacts</span>
-                        <span>My Classes</span>
-                    </div>
-                    <span id="my-classes-chevron" class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">keyboard_arrow_right</span>
-                </button>
-                <!-- Submenu Items -->
-                <div id="my-classes-submenu" class="pl-9 space-y-1 mt-1 hidden overflow-hidden transition-all duration-300">
-                    <a href="/instructor/create-class" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Create a Class</a>
-                    <a href="/instructor/group-assignment" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Group Assignment</a>
-                    <a href="/instructor/course-detail" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Course Details</a>
-                </div>
-            </div>
+
 
             <!-- Task Ledger (Active) -->
             <a href="/instructor/task-ledger" class="flex items-center gap-3 px-3.5 py-2.5 bg-gray-100 text-gray-900 rounded-lg text-[14px] font-semibold transition-all duration-200">
@@ -85,10 +70,10 @@
 
         <!-- Sidebar Footer -->
         <div class="p-4 border-t border-gray-150 space-y-1">
-            <!-- Sign Out -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
+            <!-- Log Out -->
+            <a href="/login" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500">logout</span>
-                <span>Sign Out</span>
+                <span>Log Out</span>
             </a>
         </div>
     </aside>
@@ -321,15 +306,7 @@
         toggleBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
 
-        // Collapsible My Classes menu
-        const myClassesBtn = document.getElementById('my-classes-btn');
-        const myClassesSubmenu = document.getElementById('my-classes-submenu');
-        const myClassesChevron = document.getElementById('my-classes-chevron');
 
-        myClassesBtn.addEventListener('click', () => {
-            myClassesSubmenu.classList.toggle('hidden');
-            myClassesChevron.classList.toggle('rotate-90');
-        });
 
         // Sim updates
         const ledgerBody = document.getElementById('ledger-body');

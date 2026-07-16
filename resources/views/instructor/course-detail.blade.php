@@ -58,23 +58,7 @@
                 <span>Dashboard</span>
             </a>
 
-            <!-- My Classes (Active & Dropdown) -->
-            <div class="space-y-1">
-                <button type="button" id="my-classes-btn" class="w-full relative flex items-center justify-between px-3.5 py-2.5 bg-gray-100 text-gray-900 rounded-lg font-medium text-[14px] transition-all duration-200 cursor-pointer focus:outline-none">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-[20px] text-gray-900">import_contacts</span>
-                        <span>My Classes</span>
-                    </div>
-                    <span id="my-classes-chevron" class="material-symbols-outlined text-[18px] text-gray-400 transition-transform duration-200">keyboard_arrow_right</span>
-                    <div class="absolute right-0 top-2 bottom-2 w-1 bg-black rounded-l"></div>
-                </button>
-                <!-- Submenu Items -->
-                <div id="my-classes-submenu" class="pl-9 space-y-1 mt-1 hidden overflow-hidden transition-all duration-300">
-                    <a href="/instructor/create-class" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Create a Class</a>
-                    <a href="/instructor/group-assignment" class="block py-1.5 text-[13px] text-gray-500 hover:text-black font-medium transition">Group Assignment</a>
-                    <a href="/instructor/course-detail" class="block py-1.5 text-[13px] font-semibold text-black hover:text-black">Course Details</a>
-                </div>
-            </div>
+
 
             <!-- Task Ledger -->
             <a href="/instructor/task-ledger" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg text-[14px] font-medium transition-all duration-200">
@@ -85,10 +69,10 @@
 
         <!-- Sidebar Footer -->
         <div class="p-4 border-t border-gray-150 space-y-1">
-            <!-- Sign Out -->
-            <a href="#" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
+            <!-- Log Out -->
+            <a href="/login" class="flex items-center gap-3 px-3.5 py-2.5 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-[14px] font-medium transition-all duration-200">
                 <span class="material-symbols-outlined text-[20px] text-gray-500">logout</span>
-                <span>Sign Out</span>
+                <span>Log Out</span>
             </a>
         </div>
     </aside>
@@ -140,10 +124,10 @@
                 <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/80">
                     <a href="/dashboard" class="hover:text-white transition">Dashboard</a>
                     <span>/</span>
-                    <span class="text-white">Capstone 1</span>
+                    <span id="banner-breadcrumb" class="text-white">Capstone 1</span>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-black mt-1.5">[11010] Capstone Project 1</h1>
-                <p class="text-white/80 text-sm mt-0.5 font-medium">Summer Semester 2026 &bull; Section A &bull; Dr. Julian Vance</p>
+                <h1 id="banner-title" class="text-2xl md:text-3xl font-black mt-1.5">[11010] Capstone Project 1</h1>
+                <p id="banner-subtitle" class="text-white/80 text-sm mt-0.5 font-medium">Summer Semester 2026 &bull; Section A &bull; Dr. Julian Vance</p>
             </div>
             
             <div class="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/20 self-start md:self-auto">
@@ -159,7 +143,7 @@
         <div class="bg-white border-b border-gray-200 px-6 md:px-8 shrink-0 flex items-center justify-between overflow-x-auto scrollbar-none">
             <div class="flex gap-6 text-[14px] whitespace-nowrap">
                 <button id="tab-courses" class="tab-btn py-4 text-gray-500 hover:text-gray-900 font-medium active">
-                    📚 Courses & Subjects
+                    Overview
                 </button>
                 <button id="tab-students" class="tab-btn py-4 text-gray-500 hover:text-gray-900 font-medium">
                     👥 Roster & CSV Import
@@ -185,209 +169,49 @@
         <!-- Main Content Area -->
         <main class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6">
 
-            <!-- ================= TAB 1: COURSES & SUBJECTS ================= -->
+            <!-- ================= TAB 1: OVERVIEW ================= -->
             <div id="content-courses" class="space-y-6">
-                <!-- Overview Stats Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-2xl">auto_stories</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">My Subjects</span>
-                            <span class="text-xl font-bold text-gray-900 mt-0.5 block" id="subjects-stat">3 Active</span>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-2xl">pending_actions</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Active Projects</span>
-                            <span class="text-xl font-bold text-gray-900 mt-0.5 block">2 Running</span>
-                        </div>
+                <!-- Course Card Banner/Overview -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 leading-tight">[11010] Capstone Project 1 Overview</h2>
+                        <p class="text-xs text-gray-500 mt-1 font-medium">Summer Semester 2026 &bull; Section A</p>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-2xl">assignment</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Activities Assigned</span>
-                            <span class="text-xl font-bold text-gray-900 mt-0.5 block">8 Completed</span>
-                        </div>
+                    <div class="prose max-w-none text-sm text-gray-650 space-y-4">
+                        <p>
+                            The Capstone Project 1 course is a culminating, multi-disciplinary team-based design experience. 
+                            It provides students with the opportunity to integrate foundational concepts and apply software engineering methodology, 
+                            project management strategies, and architectural designs to build solutions for real-world academic or industry problems.
+                        </p>
+                        <p>
+                            In this semester, the curriculum is structured around forming high-functioning engineering teams, establishing clear 
+                            backlogs and sprints, designing robust system architectures, and executing on the initial proof-of-concept.
+                        </p>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-xs flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-2xl">assignment_ind</span>
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Groupings Setup</span>
-                            <span class="text-xl font-bold text-gray-900 mt-0.5 block">4 Completed</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Current Courses Card Grid with Semester Filter -->
-                <div>
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
-                        <h2 class="text-base font-bold text-gray-900 uppercase tracking-wider" id="courses-header-text">Instructor's Current Courses & Subjects</h2>
-                        <!-- Current vs Past Course Filter (Sketch Flow) -->
-                        <div class="flex bg-gray-100 p-0.5 rounded-lg border border-gray-200 self-start sm:self-auto">
-                            <button id="filter-active-courses" class="px-4 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-xs transition">
-                                Current Courses
-                            </button>
-                            <button id="filter-past-courses" class="px-4 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition">
-                                Past Courses
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Active Courses Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="active-courses-grid">
-                        <!-- Course 1 -->
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden flex flex-col transition-card">
-                            <div class="h-2 bg-[#0B8793]"></div>
-                            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 rounded-md">CORE</span>
-                                        <span class="text-xs font-semibold text-gray-400">Summer 2026</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-gray-900 mt-2">[11010] Capstone Project 1</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Focus on team structure, backlog development, and proof of concept milestones.</p>
-                                </div>
-                                <div class="space-y-2 border-t border-gray-100 pt-3 text-[13px] text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">schedule</span>
-                                        <span>Mon, Wed &bull; 9:20 - 11:10 AM</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">groups</span>
-                                        <span id="course-r1-stat">12 Students Roster</span>
-                                    </div>
-                                </div>
-                                <button onclick="switchTab('tab-students')" class="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 font-semibold text-[13px] rounded-lg transition">
-                                    View Course Details
-                                </button>
+                    <!-- Course Core Objectives Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-150">
+                        <div class="p-4 rounded-xl bg-teal-50/50 border border-teal-150/40">
+                            <div class="flex items-center gap-2 text-teal-800 font-bold text-xs uppercase tracking-wide">
+                                <span class="material-symbols-outlined text-[18px]">groups</span>
+                                <span>Team & Proposal Setup</span>
                             </div>
+                            <p class="text-xs text-gray-650 mt-2">Define project scope, allocate roles, and establish collaboration and version control rules.</p>
                         </div>
-
-                        <!-- Course 2 -->
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden flex flex-col transition-card">
-                            <div class="h-2 bg-[#14A76C]"></div>
-                            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 rounded-md">ELECTIVE</span>
-                                        <span class="text-xs font-semibold text-gray-400">2nd Semester</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-gray-900 mt-2">[11060] Practicum & Industry prep</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Prepares graduating students for internship deployments and portfolio construction.</p>
-                                </div>
-                                <div class="space-y-2 border-t border-gray-100 pt-3 text-[13px] text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">schedule</span>
-                                        <span>Tue, Thu &bull; 1:30 - 3:00 PM</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">groups</span>
-                                        <span>24 Students Roster</span>
-                                    </div>
-                                </div>
-                                <button onclick="alert('Viewing [11060] Practicum details (Mock)')" class="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 font-semibold text-[13px] rounded-lg transition">
-                                    View Course Details
-                                </button>
+                        <div class="p-4 rounded-xl bg-purple-50/50 border border-purple-150/40">
+                            <div class="flex items-center gap-2 text-purple-800 font-bold text-xs uppercase tracking-wide">
+                                <span class="material-symbols-outlined text-[18px]">schema</span>
+                                <span>System Architecture</span>
                             </div>
+                            <p class="text-xs text-gray-650 mt-2">Construct UML models, database schemas, API contracts, and user interface mockups.</p>
                         </div>
-
-                        <!-- Course 3 -->
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden flex flex-col transition-card">
-                            <div class="h-2 bg-[#2B6CB0]"></div>
-                            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 rounded-md">SPECIAL</span>
-                                        <span class="text-xs font-semibold text-gray-400">Summer 2026</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-gray-900 mt-2">Passport to Canvas</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Quick start orientation guide introducing key features of the LMS workspace.</p>
-                                </div>
-                                <div class="space-y-2 border-t border-gray-100 pt-3 text-[13px] text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">schedule</span>
-                                        <span>Self-Paced Navigation</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">groups</span>
-                                        <span>45 Students Roster</span>
-                                    </div>
-                                </div>
-                                <button onclick="alert('Viewing Passport to Canvas orientation guide (Mock)')" class="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 font-semibold text-[13px] rounded-lg transition">
-                                    View Course Details
-                                </button>
+                        <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-150/40">
+                            <div class="flex items-center gap-2 text-amber-800 font-bold text-xs uppercase tracking-wide">
+                                <span class="material-symbols-outlined text-[18px]">developer_mode</span>
+                                <span>Proof of Concept</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Past Courses Grid (Hidden by default) -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 hidden" id="past-courses-grid">
-                        <!-- Past Course 1 -->
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden flex flex-col opacity-80 hover:opacity-100 transition duration-200">
-                            <div class="h-2 bg-gray-400"></div>
-                            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-600 rounded-md">CORE</span>
-                                        <span class="text-xs font-semibold text-gray-400">1st Semester 2025-2026</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-gray-900 mt-2">[10090] Systems Analysis & Design</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Foundational course on software life cycles, UML modeling, and database design.</p>
-                                </div>
-                                <div class="space-y-2 border-t border-gray-100 pt-3 text-[13px] text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">schedule</span>
-                                        <span>Mon, Wed &bull; 1:30 - 3:00 PM</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">groups</span>
-                                        <span>32 Students Roster</span>
-                                    </div>
-                                </div>
-                                <button onclick="alert('Viewing archived details for [10090] Systems Analysis & Design (Mock)')" class="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 font-semibold text-[13px] rounded-lg transition">
-                                    View Course Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Past Course 2 -->
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden flex flex-col opacity-80 hover:opacity-100 transition duration-200">
-                            <div class="h-2 bg-gray-400"></div>
-                            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-600 rounded-md">ELECTIVE</span>
-                                        <span class="text-xs font-semibold text-gray-400">Spring 2025</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-gray-900 mt-2">[10042] Introduction to Cyber Security</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Covers standard encryption practices, security protocols, and threat landscape modeling.</p>
-                                </div>
-                                <div class="space-y-2 border-t border-gray-100 pt-3 text-[13px] text-gray-600">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">schedule</span>
-                                        <span>Tue, Thu &bull; 9:20 - 11:10 AM</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[18px] text-gray-400">groups</span>
-                                        <span>18 Students Roster</span>
-                                    </div>
-                                </div>
-                                <button onclick="alert('Viewing archived details for [10042] Introduction to Cyber Security (Mock)')" class="w-full py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-800 font-semibold text-[13px] rounded-lg transition">
-                                    View Course Details
-                                </button>
-                            </div>
+                            <p class="text-xs text-gray-650 mt-2">Develop a functional prototype demonstrating core mechanics and validating key technical assumptions.</p>
                         </div>
                     </div>
                 </div>
@@ -534,8 +358,9 @@
                         <div class="flex items-center gap-2">
                             <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Group Assignment For:</label>
                             <select id="group-target" class="border border-gray-200 rounded-lg text-xs py-1.5 px-3 focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-gray-50/50">
+                                <option value="" selected>Select a project task</option>
                                 <optgroup label="💼 Capstone Projects" id="group-target-projects">
-                                    <option value="capstone-milestone-1" selected>Capstone Milestone 1 - Proposal & Team Setup</option>
+                                    <option value="capstone-milestone-1">Capstone Milestone 1 - Proposal & Team Setup</option>
                                     <option value="capstone-milestone-2">Capstone Milestone 2 - System Architecture</option>
                                     <option value="capstone-final">Capstone Final Defense & Presentation</option>
                                 </optgroup>
@@ -570,90 +395,102 @@
                     </div>
                 </div>
 
-                <!-- Workflow Selector (Sketch Flows: Box 1 & Box 2) -->
-                <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-xs space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-150 pb-3 gap-3">
-                        <div>
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Grouping Creation Order (Workflow Mode)</span>
-                            <h4 class="text-sm font-bold text-gray-900 mt-0.5">Determine how groupings and projects relate</h4>
-                        </div>
-                        <div class="flex bg-gray-150 p-0.5 rounded-lg border border-gray-200 self-start sm:self-auto">
-                            <button id="wf-mode-a" class="px-3.5 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-xs transition">
-                                Flow A: Make Activity First
-                            </button>
-                            <button id="wf-mode-b" class="px-3.5 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition">
-                                Flow B: Create Group First
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Visual Helper step diagram depending on selected Mode -->
-                    <div id="wf-helper-mode-a" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="bg-teal-50/40 border border-teal-100 p-3 rounded-lg flex items-start gap-2.5">
-                            <span class="w-5 h-5 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs mt-0.5">1</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-teal-800 block">Create Activity / Project first</span>
-                                <span class="text-gray-500 block mt-0.5">Define milestones, instructions, and parameters first.</span>
+                <!-- Groupings Main UI container, hidden by default -->
+                <div id="groupings-main-ui" class="space-y-6 hidden">
+                    <!-- Workflow Selector (Sketch Flows: Box 1 & Box 2) -->
+                    <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-xs space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-150 pb-3 gap-3">
+                            <div>
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Grouping Creation Order (Workflow Mode)</span>
+                                <h4 class="text-sm font-bold text-gray-900 mt-0.5">Determine how groupings and projects relate</h4>
+                            </div>
+                            <div class="flex bg-gray-150 p-0.5 rounded-lg border border-gray-200 self-start sm:self-auto">
+                                <button id="wf-mode-a" class="px-3.5 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-xs transition">
+                                    Flow A: Make Activity First
+                                </button>
+                                <button id="wf-mode-b" class="px-3.5 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition">
+                                    Flow B: Create Group First
+                                </button>
                             </div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
-                            <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">2</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-gray-700 block">Form or Select Student Groups</span>
-                                <span class="text-gray-500 block mt-0.5">Drag-and-drop students or random-allocate students to groups.</span>
+                        
+                        <!-- Visual Helper step diagram depending on selected Mode -->
+                        <div id="wf-helper-mode-a" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-teal-50/40 border border-teal-100 p-3 rounded-lg flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs mt-0.5">1</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-teal-800 block">Create Activity / Project first</span>
+                                    <span class="text-gray-500 block mt-0.5">Define milestones, instructions, and parameters first.</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
+                                <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">2</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-gray-700 block">Form or Select Student Groups</span>
+                                    <span class="text-gray-500 block mt-0.5">Drag-and-drop students or random-allocate students to groups.</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
+                                <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">3</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-gray-700 block">Bind and Deploy</span>
+                                    <span class="text-gray-500 block mt-0.5">Deploy the created project directly to the custom groups.</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
-                            <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">3</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-gray-700 block">Bind and Deploy</span>
-                                <span class="text-gray-500 block mt-0.5">Deploy the created project directly to the custom groups.</span>
+
+                        <div id="wf-helper-mode-b" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
+                            <div class="bg-indigo-50/40 border border-indigo-100 p-3 rounded-lg flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs mt-0.5">1</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-indigo-800 block">Create Groups First</span>
+                                    <span class="text-gray-500 block mt-0.5">Divide your roster into teams first using randomize/drag-drop.</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
+                                <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">2</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-gray-700 block">Establish Activities / Projects</span>
+                                    <span class="text-gray-500 block mt-0.5">Set up the deliverables and bind them to the existing groups.</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
+                                <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">3</span>
+                                <div class="text-xs">
+                                    <span class="font-bold text-gray-700 block">Track Live Contribution</span>
+                                    <span class="text-gray-500 block mt-0.5">Groups tackle multiple projects over the semester seamlessly.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="wf-helper-mode-b" class="grid grid-cols-1 md:grid-cols-3 gap-4 hidden">
-                        <div class="bg-indigo-50/40 border border-indigo-100 p-3 rounded-lg flex items-start gap-2.5">
-                            <span class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs mt-0.5">1</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-indigo-800 block">Create Groups First</span>
-                                <span class="text-gray-500 block mt-0.5">Divide your roster into teams first using randomize/drag-drop.</span>
+                    <!-- Drag-and-Drop Board Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[500px]">
+                        <!-- Left: Unassigned Students Pool -->
+                        <div class="lg:col-span-1 bg-white border border-gray-200 rounded-xl shadow-xs flex flex-col h-[520px] lg:h-auto overflow-hidden">
+                            <div class="px-5 py-4 border-b border-gray-150 flex items-center justify-between shrink-0 bg-gray-50/20">
+                                <h3 class="text-[12px] font-bold text-gray-500 uppercase tracking-wider">Unassigned Pool</h3>
+                                <span id="unassigned-count" class="px-2 py-0.5 text-[11px] font-bold bg-gray-100 text-gray-700 rounded-full">0</span>
+                            </div>
+                            <div id="unassigned-container" class="p-4 space-y-3 overflow-y-auto flex-1 bg-gray-50/30 border-dashed border-2 border-transparent transition" dropzone="true">
+                                <!-- Student draggable cards go here -->
                             </div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
-                            <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">2</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-gray-700 block">Establish Activities / Projects</span>
-                                <span class="text-gray-500 block mt-0.5">Set up the deliverables and bind them to the existing groups.</span>
-                            </div>
-                        </div>
-                        <div class="bg-gray-50 border border-gray-150 p-3 rounded-lg flex items-start gap-2.5 opacity-80">
-                            <span class="w-5 h-5 rounded-full bg-gray-400 text-white flex items-center justify-center font-bold text-xs mt-0.5">3</span>
-                            <div class="text-xs">
-                                <span class="font-bold text-gray-700 block">Track Live Contribution</span>
-                                <span class="text-gray-500 block mt-0.5">Groups tackle multiple projects over the semester seamlessly.</span>
-                            </div>
+
+                        <!-- Right: Group/Team Columns -->
+                        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch h-full lg:h-auto overflow-y-auto" id="group-containers-grid">
+                            <!-- Group Bins dynamically generated here -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Drag-and-Drop Board Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 min-h-[500px]">
-                    <!-- Left: Unassigned Students Pool -->
-                    <div class="lg:col-span-1 bg-white border border-gray-200 rounded-xl shadow-xs flex flex-col h-[520px] lg:h-auto overflow-hidden">
-                        <div class="px-5 py-4 border-b border-gray-150 flex items-center justify-between shrink-0 bg-gray-50/20">
-                            <h3 class="text-[12px] font-bold text-gray-500 uppercase tracking-wider">Unassigned Pool</h3>
-                            <span id="unassigned-count" class="px-2 py-0.5 text-[11px] font-bold bg-gray-100 text-gray-700 rounded-full">0</span>
-                        </div>
-                        <div id="unassigned-container" class="p-4 space-y-3 overflow-y-auto flex-1 bg-gray-50/30 border-dashed border-2 border-transparent transition" dropzone="true">
-                            <!-- Student draggable cards go here -->
-                        </div>
+                <!-- Groupings Placeholder card, visible by default -->
+                <div id="groupings-placeholder" class="bg-white border border-gray-200 rounded-xl p-16 text-center flex flex-col items-center justify-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 mb-2 border border-gray-150">
+                        <span class="material-symbols-outlined text-3xl">fact_check</span>
                     </div>
-
-                    <!-- Right: Group/Team Columns -->
-                    <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch h-full lg:h-auto overflow-y-auto" id="group-containers-grid">
-                        <!-- Group Bins dynamically generated here -->
-                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg">No Project Task Selected</h3>
+                    <p class="text-xs text-gray-500 max-w-sm leading-relaxed">Select a project task or classroom activity from the dropdown menu above to start managing and allocating student groups.</p>
                 </div>
             </div>
 
@@ -671,14 +508,7 @@
                                 <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Announcement Title</label>
                                 <input type="text" id="ann-title" placeholder="e.g. Milestone 1 Deliverables Updated" required class="w-full border border-gray-200 rounded-lg text-xs py-2 px-3 focus:outline-none focus:ring-1 focus:ring-black">
                             </div>
-                            <div>
-                                <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Target Course</label>
-                                <select id="ann-target" class="w-full border border-gray-200 rounded-lg text-xs py-2 px-3 focus:outline-none focus:ring-1 focus:ring-black bg-gray-50/50">
-                                    <option value="capstone-1">[11010] Capstone Project 1</option>
-                                    <option value="practicum-1">[11060] Practicum & Industry Prep</option>
-                                    <option value="passport-1">Passport to Canvas</option>
-                                </select>
-                            </div>
+
                             <div>
                                 <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">Announcement Content</label>
                                 <textarea id="ann-content" rows="4" placeholder="Type instructions, news, or notifications for students..." required class="w-full border border-gray-200 rounded-lg text-xs py-2 px-3 focus:outline-none focus:ring-1 focus:ring-black"></textarea>
@@ -815,18 +645,64 @@
         toggleBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
 
-        // Collapsible My Classes menu
-        const myClassesBtn = document.getElementById('my-classes-btn');
-        const myClassesSubmenu = document.getElementById('my-classes-submenu');
-        const myClassesChevron = document.getElementById('my-classes-chevron');
+        // ================= TASK-BASED BANNER UPDATE =================
+        // Map task query param values to display info
+        const taskMap = {
+            'capstone-milestone-1': {
+                breadcrumb: 'Milestone 1',
+                title: 'Capstone Milestone 1 - Proposal & Team Setup',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            },
+            'capstone-milestone-2': {
+                breadcrumb: 'Milestone 2',
+                title: 'Capstone Milestone 2 - System Architecture',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            },
+            'capstone-final': {
+                breadcrumb: 'Final Defense',
+                title: 'Capstone Final Defense & Presentation',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            },
+            'activity-1': {
+                breadcrumb: 'Activity 1',
+                title: 'Activity 1 - Threat Modeling Exercise',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            },
+            'activity-2': {
+                breadcrumb: 'Activity 2',
+                title: 'Activity 2 - Agile Backlog Sprint Planning',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            },
+            'activity-3': {
+                breadcrumb: 'Activity 3',
+                title: 'Activity 3 - Git Merge Conflict Resolution',
+                subtitle: 'Summer Semester 2026 • Section A • Dr. Julian Vance'
+            }
+        };
 
-        myClassesSubmenu.classList.remove('hidden');
-        myClassesChevron.classList.add('rotate-90');
+        // Read query param and update banner
+        const urlParams = new URLSearchParams(window.location.search);
+        const taskParam = urlParams.get('task');
+        if (taskParam && taskMap[taskParam]) {
+            const info = taskMap[taskParam];
+            // Update breadcrumb text
+            document.getElementById('banner-breadcrumb').textContent = info.breadcrumb;
+            // Update main title
+            document.getElementById('banner-title').textContent = info.title;
+            // Update subtitle
+            document.getElementById('banner-subtitle').textContent = info.subtitle;
 
-        myClassesBtn.addEventListener('click', () => {
-            myClassesSubmenu.classList.toggle('hidden');
-            myClassesChevron.classList.toggle('rotate-90');
-        });
+            // Also pre-select matching option in the groupings dropdown
+            const groupTarget = document.getElementById('group-target');
+            if (groupTarget) {
+                for (let i = 0; i < groupTarget.options.length; i++) {
+                    if (groupTarget.options[i].value === taskParam) {
+                        groupTarget.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
 
         // Tab Switching logic
         const tabs = {
@@ -853,7 +729,7 @@
             });
             // Re-render groupings board if tab groupings is clicked to ensure heights match
             if (activeId === 'tab-groupings') {
-                renderGroupingsBoard();
+                updateGroupingsUiState();
             }
         }
 
@@ -1006,30 +882,7 @@
         // Search Roster
         document.getElementById('roster-search').addEventListener('input', renderRoster);
 
-        // ================= Active vs Past Semesters courses toggle =================
-        const btnFilterActive = document.getElementById('filter-active-courses');
-        const btnFilterPast = document.getElementById('filter-past-courses');
-        const activeCoursesGrid = document.getElementById('active-courses-grid');
-        const pastCoursesGrid = document.getElementById('past-courses-grid');
-        const coursesHeaderText = document.getElementById('courses-header-text');
 
-        btnFilterActive.addEventListener('click', () => {
-            btnFilterActive.className = 'px-4 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-xs transition';
-            btnFilterPast.className = 'px-4 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition';
-            activeCoursesGrid.classList.remove('hidden');
-            pastCoursesGrid.classList.add('hidden');
-            coursesHeaderText.innerText = "Instructor's Current Courses & Subjects";
-            document.getElementById('subjects-stat').innerText = "3 Active";
-        });
-
-        btnFilterPast.addEventListener('click', () => {
-            btnFilterPast.className = 'px-4 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-xs transition';
-            btnFilterActive.className = 'px-4 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition';
-            pastCoursesGrid.classList.remove('hidden');
-            activeCoursesGrid.classList.add('hidden');
-            coursesHeaderText.innerText = "Instructor's Past Semesters / Subjects";
-            document.getElementById('subjects-stat').innerText = "2 Archived";
-        });
 
         // ================= CSV Parsing Simulator =================
         const dropZone = document.getElementById('drop-zone');
@@ -1292,12 +1145,45 @@
 
         groupsCountInput.addEventListener('change', renderGroupingsBoard);
 
-        document.getElementById('group-target').addEventListener('change', (e) => {
-            students.forEach(st => {
-                studentPlacements[st.id] = 'unassigned';
-            });
-            renderGroupingsBoard();
-            alert(`Loaded group assignment configuration for: ${e.target.options[e.target.selectedIndex].text}`);
+        const groupTarget = document.getElementById('group-target');
+        const groupingsMainUi = document.getElementById('groupings-main-ui');
+        const groupingsPlaceholder = document.getElementById('groupings-placeholder');
+
+        function updateGroupingsUiState() {
+            const selectedVal = groupTarget.value;
+            if (selectedVal === "") {
+                groupingsMainUi.classList.add('hidden');
+                groupingsPlaceholder.classList.remove('hidden');
+            } else {
+                groupingsMainUi.classList.remove('hidden');
+                groupingsPlaceholder.classList.add('hidden');
+                renderGroupingsBoard();
+            }
+        }
+
+        groupTarget.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val !== "") {
+                students.forEach(st => {
+                    studentPlacements[st.id] = 'unassigned';
+                });
+                updateGroupingsUiState();
+
+                // Update banner header to match selected task
+                if (taskMap[val]) {
+                    document.getElementById('banner-breadcrumb').textContent = taskMap[val].breadcrumb;
+                    document.getElementById('banner-title').textContent = taskMap[val].title;
+                    document.getElementById('banner-subtitle').textContent = taskMap[val].subtitle;
+                }
+
+                alert(`Loaded group assignment configuration for: ${e.target.options[e.target.selectedIndex].text}`);
+            } else {
+                updateGroupingsUiState();
+                // Reset banner to defaults
+                document.getElementById('banner-breadcrumb').textContent = 'Capstone 1';
+                document.getElementById('banner-title').textContent = '[11010] Capstone Project 1';
+                document.getElementById('banner-subtitle').textContent = 'Summer Semester 2026 \u2022 Section A \u2022 Dr. Julian Vance';
+            }
         });
 
         // ================= Workflow mode switching (Box 1 vs Box 2) =================
@@ -1361,8 +1247,7 @@
         function handlePostAnnouncement() {
             const title = document.getElementById('ann-title').value.trim();
             const content = document.getElementById('ann-content').value.trim();
-            const targetSelect = document.getElementById('ann-target');
-            const targetName = targetSelect.options[targetSelect.selectedIndex].text;
+            const targetName = "[11010] Capstone Project 1";
 
             const dateStr = new Date().toLocaleDateString('en-US', {
                 month: 'long',
@@ -1477,7 +1362,7 @@
         // Initialize page components
         initPlacements();
         renderRoster();
-        renderGroupingsBoard();
+        updateGroupingsUiState();
         renderAnnouncements();
     </script>
 
